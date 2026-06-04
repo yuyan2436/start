@@ -15,13 +15,14 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Yuji+Syuku&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=Reggae+One&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml" />
 </head>
 <body>
 
   <!-- ===== ヘッダー ===== -->
   <header class="site-header">
     <div class="container header-inner">
-      <a class="logo" href="#top">晴れ人</a>
+      <a class="logo" href="#top"><img class="logo-mark" src="assets/logo.svg" alt="" /><span>晴れ人</span></a>
       <nav class="nav" aria-label="メインメニュー">
         <a href="#about">晴れ人とは</a>
         <a href="#works">活動</a>
@@ -36,6 +37,7 @@
     <div class="hero-rays" aria-hidden="true"></div>
     <div class="container hero-inner">
       <p class="hero-place">茨城県日立市</p>
+      <img class="hero-mark" src="assets/logo.svg" alt="" />
       <h1 class="hero-title">晴れ人</h1>
       <!-- 看板の手描き波線をイメージした下線 -->
       <svg class="hero-wave" viewBox="0 0 240 18" aria-hidden="true" preserveAspectRatio="none">
@@ -68,6 +70,10 @@
           まずは地元の行事に飛び込むところから。いつかは、いろいろな行事から
           「晴れ人に声をかけよう」と思ってもらえる――そんな組織を目指しています。
         </p>
+        <figure class="about-photo">
+          <img src="images/IMG_7723.jpeg" alt="背中に白い筆文字で「晴れ人」と入った黒いTシャツ" loading="lazy" />
+          <figcaption>背中に「晴れ人」。これが目印です。</figcaption>
+        </figure>
       </div>
     </section>
 
@@ -80,7 +86,7 @@
         <div class="cards">
           <article class="card">
             <div class="card-media">
-              <div class="media-placeholder">写真準備中</div>
+              <img class="card-img" src="images/IMG_7724.jpeg" alt="助川鹿嶋神社の宵祭りでの晴れ人の出店テント" loading="lazy" />
             </div>
             <div class="card-body">
               <p class="card-tag tag-sky">出店</p>
@@ -95,7 +101,7 @@
 
           <article class="card">
             <div class="card-media">
-              <div class="media-placeholder">写真準備中</div>
+              <img class="card-img" src="images/unnamed.jpg" alt="夜の宵祭りで大勢の人が集まる賑わいの様子" loading="lazy" />
             </div>
             <div class="card-body">
               <p class="card-tag tag-orange">みこし</p>
@@ -109,7 +115,7 @@
 
           <article class="card">
             <div class="card-media">
-              <div class="media-placeholder">写真準備中</div>
+              <img class="card-img" src="images/IMG_7727.jpeg" alt="社殿の前でみんなで舞台を組み立てる準備の様子" loading="lazy" />
             </div>
             <div class="card-body">
               <p class="card-tag tag-yellow">準備</p>
@@ -124,8 +130,30 @@
       </div>
     </section>
 
+    <!-- ===== 手づくりギャラリー ===== -->
+    <section class="section" id="gallery">
+      <div class="container">
+        <p class="section-eyebrow eb-pink">GALLERY</p>
+        <h2 class="section-title">手づくりの、晴れ人らしさ</h2>
+        <p class="lead-text">
+          看板ものぼりも、ぜんぶ手づくり。会場を盛り上げる小道具のひとつひとつに、
+          晴れ人の「楽しもう」が詰まっています。
+        </p>
+        <div class="gallery-grid">
+          <figure class="gallery-item">
+            <img src="images/IMG_7722.jpeg" alt="宵祭りの出店で使った手描きの黒板看板" loading="lazy" />
+            <figcaption>手描きの黒板看板</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img src="images/IMG_7720.jpeg" alt="すいとんののぼり旗のデザイン" loading="lazy" />
+            <figcaption>すいとんののぼり旗</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
     <!-- ===== これから ===== -->
-    <section class="section" id="future">
+    <section class="section section-tint" id="future">
       <div class="container narrow">
         <p class="section-eyebrow eb-orange">FUTURE</p>
         <h2 class="section-title">これから目指すこと</h2>

@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="晴れ人 ロゴ（太陽）">
+  <defs>
+    <linearGradient id="sun" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffce2e"/>
+      <stop offset="1" stop-color="#f4791f"/>
+    </linearGradient>
+  </defs>
+  <!-- 光（12方向のrays） -->
+  <g stroke="url(#sun)" stroke-width="8" stroke-linecap="round">
+    <line x1="60" y1="22" x2="60" y2="5" transform="rotate(0 60 60)"/>
+    <line x1="60" y1="22" x2="60" y2="5" transform="rotate(30 60 60)"/>
+    <line x1="60" y1="22" x2="60" y2="5" transform="rotate(60 60 60)"/>
+    <line x1="60" y1="22" x2="60" y2="5" transform="rotate(90 60 60)"/>
+    <line x1="60" y1="22" x2="60" y2="5" transform="rotate(120 60 60)"/>
+    <line x1="60" y1="22" x2="60" y2="5" transform="rotate(150 60 60)"/>
+    <line x1="60" y1="22" x2="60" y2="5" transform="rotate(180 60 60)"/>
+    <line x1="60" y1="22" x2="60" y2="5" transform="rotate(210 60 60)"/>
+    <line x1="60" y1="22" x2="60" y2="5" transform="rotate(240 60 60)"/>
+    <line x1="60" y1="22" x2="60" y2="5" transform="rotate(270 60 60)"/>
+    <line x1="60" y1="22" x2="60" y2="5" transform="rotate(300 60 60)"/>
+    <line x1="60" y1="22" x2="60" y2="5" transform="rotate(330 60 60)"/>
+  </g>
+  <!-- 太陽の本体 -->
+  <circle cx="60" cy="60" r="25" fill="url(#sun)"/>
+</svg>
