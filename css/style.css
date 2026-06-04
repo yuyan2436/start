@@ -1,261 +1,219 @@
 /* =========================================================
    晴れ人（はれびと） サイトスタイル
    方針: 素のHTML/CSSのみ。ビルド不要。
-   テーマ色: 「晴れ」をイメージした明るい朱色＋生成り（きなり）
+   世界観: チームTシャツ（黒地に白の筆文字「晴れ人」）が芯。
+           差し色は出店の手描き看板のポップな色（水色・ピンク・オレンジ・黄）。
    ========================================================= */
 
 :root {
-  --color-sun: #e8552d;        /* 朱色：晴れ・祭りの主役色 */
-  --color-sun-dark: #c5421f;
-  --color-ink: #2a2320;        /* 文字色：墨に近い濃茶 */
-  --color-ink-soft: #5b524c;
-  --color-paper: #fbf7f0;      /* 背景：生成り */
-  --color-paper-tint: #f4ecdf; /* 薄いセクション背景 */
-  --color-line: #e3d8c7;
-  --color-white: #ffffff;
+  /* ベース：Tシャツ＆黒板の黒 × 白 */
+  --black: #14110f;
+  --black-soft: #211c19;
+  --white: #ffffff;
+  --paper: #faf6ef;        /* 本文背景：ほんのり生成り */
+  --ink: #1c1714;          /* 文字色 */
+  --ink-soft: #5d544d;
 
-  --font-serif: "Shippori Mincho", "Hiragino Mincho ProN", "Yu Mincho", serif;
+  /* 差し色：手描き看板から */
+  --sky: #3fb9ec;
+  --pink: #f15ba2;
+  --orange: #f4791f;
+  --yellow: #ffce2e;
+
+  --line: #e7ded1;
+
+  --font-brush: "Yuji Syuku", "Hiragino Mincho ProN", "Yu Mincho", serif;
+  --font-pop: "Reggae One", "Yuji Syuku", sans-serif;
   --font-sans: "Zen Kaku Gothic New", "Hiragino Sans", "Yu Gothic", "Meiryo", sans-serif;
 
   --maxw: 1080px;
-  --radius: 14px;
-  --shadow: 0 10px 30px rgba(42, 35, 32, 0.08);
+  --radius: 16px;
+  --shadow: 0 14px 36px rgba(20, 17, 15, 0.12);
 }
 
 * { box-sizing: border-box; }
-
 html { scroll-behavior: smooth; }
 
 body {
   margin: 0;
   font-family: var(--font-sans);
-  color: var(--color-ink);
-  background: var(--color-paper);
-  line-height: 1.85;
+  color: var(--ink);
+  background: var(--paper);
+  line-height: 1.9;
   -webkit-font-smoothing: antialiased;
 }
 
 a { color: inherit; text-decoration: none; }
-
 img { max-width: 100%; display: block; }
 
-.container {
-  width: 100%;
-  max-width: var(--maxw);
-  margin: 0 auto;
-  padding: 0 24px;
-}
-
+.container { width: 100%; max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
 .container.narrow { max-width: 760px; }
 .center { text-align: center; }
 
 /* ===== ヘッダー ===== */
 .site-header {
-  position: sticky;
-  top: 0;
-  z-index: 50;
-  background: rgba(251, 247, 240, 0.9);
+  position: sticky; top: 0; z-index: 50;
+  background: rgba(20, 17, 15, 0.92);
   backdrop-filter: blur(8px);
-  border-bottom: 1px solid var(--color-line);
 }
-
-.header-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 68px;
+.header-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+.logo {
+  font-family: var(--font-brush);
+  font-size: 1.6rem;
+  color: var(--white);
+  letter-spacing: 0.12em;
 }
+.nav { display: flex; gap: 24px; }
+.nav a { font-size: 0.9rem; color: #d8d0c8; transition: color 0.2s; }
+.nav a:hover { color: var(--sky); }
 
-.logo { display: flex; align-items: baseline; gap: 8px; }
-.logo-main {
-  font-family: var(--font-serif);
-  font-weight: 800;
-  font-size: 1.5rem;
-  color: var(--color-sun);
-  letter-spacing: 0.08em;
-}
-.logo-sub { font-size: 0.72rem; color: var(--color-ink-soft); letter-spacing: 0.12em; }
-
-.nav { display: flex; gap: 26px; }
-.nav a {
-  font-size: 0.9rem;
-  color: var(--color-ink-soft);
-  position: relative;
-  transition: color 0.2s;
-}
-.nav a:hover { color: var(--color-sun); }
-
-/* ===== ヒーロー ===== */
+/* ===== ヒーロー（黒地に白の筆文字＝Tシャツ背中） ===== */
 .hero {
   position: relative;
-  min-height: 78vh;
+  min-height: 82vh;
   display: flex;
   align-items: center;
+  background: var(--black);
   overflow: hidden;
-  background:
-    radial-gradient(120% 80% at 80% 0%, #ffd9a0 0%, rgba(255, 217, 160, 0) 55%),
-    linear-gradient(160deg, #f7b34e 0%, #e8552d 60%, #c5421f 100%);
 }
-
-/* うっすら和柄（青海波風）をCSSで描く軽い装飾 */
-.hero-overlay {
+/* 「晴れ」＝太陽の光。看板のWelcome☀をイメージした放射状の差し色 */
+.hero-rays {
   position: absolute;
-  inset: 0;
-  background-image:
-    radial-gradient(circle at 50% 100%, transparent 60%, rgba(255, 255, 255, 0.12) 61%, transparent 63%);
-  background-size: 40px 40px;
-  opacity: 0.6;
+  top: -30%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 160vmax;
+  height: 160vmax;
+  background: repeating-conic-gradient(
+    from 0deg,
+    rgba(255, 206, 46, 0.10) 0deg 6deg,
+    transparent 6deg 12deg
+  );
+  opacity: 0.7;
   pointer-events: none;
 }
-
-.hero-inner { position: relative; color: var(--color-white); padding: 80px 24px; }
+.hero-inner { position: relative; text-align: center; padding: 90px 24px; width: 100%; }
 
 .hero-place {
   display: inline-block;
-  font-size: 0.85rem;
-  letter-spacing: 0.3em;
-  padding: 4px 14px;
-  border: 1px solid rgba(255, 255, 255, 0.7);
+  font-size: 0.82rem;
+  letter-spacing: 0.32em;
+  color: var(--white);
+  padding: 5px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.45);
   border-radius: 999px;
-  margin-bottom: 22px;
+  margin-bottom: 26px;
 }
-
 .hero-title {
-  font-family: var(--font-serif);
-  font-weight: 800;
-  font-size: clamp(3.2rem, 12vw, 6rem);
-  margin: 0 0 18px;
-  letter-spacing: 0.12em;
-  text-shadow: 0 4px 20px rgba(120, 30, 0, 0.25);
+  font-family: var(--font-brush);
+  font-size: clamp(3.6rem, 16vw, 7.5rem);
+  color: var(--white);
+  margin: 0;
+  letter-spacing: 0.14em;
+  line-height: 1.1;
 }
-
+.hero-wave { display: block; width: min(280px, 60%); height: 16px; margin: 6px auto 24px; }
 .hero-lead {
   font-size: clamp(1.05rem, 3vw, 1.5rem);
   font-weight: 500;
+  color: #f0ebe4;
   margin: 0 0 36px;
   line-height: 1.7;
 }
-
-.hero-actions { display: flex; flex-wrap: wrap; gap: 14px; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; }
 
 /* ===== ボタン ===== */
 .btn {
   display: inline-block;
-  padding: 13px 30px;
+  padding: 13px 32px;
   border-radius: 999px;
   font-weight: 700;
   font-size: 0.95rem;
-  transition: transform 0.15s, box-shadow 0.2s, background 0.2s;
+  transition: transform 0.15s, box-shadow 0.2s, background 0.2s, color 0.2s;
 }
 .btn:hover { transform: translateY(-2px); }
-.btn-primary { background: var(--color-white); color: var(--color-sun-dark); box-shadow: var(--shadow); }
-.btn-ghost { border: 1.5px solid rgba(255, 255, 255, 0.85); color: var(--color-white); }
-.btn-ghost:hover { background: rgba(255, 255, 255, 0.14); }
+.btn-primary { background: var(--sky); color: var(--white); box-shadow: 0 10px 24px rgba(63, 185, 236, 0.35); }
+.btn-primary:hover { background: #2aa9df; }
+.btn-ghost { border: 1.5px solid rgba(255, 255, 255, 0.75); color: var(--white); }
+.btn-ghost:hover { background: rgba(255, 255, 255, 0.12); }
+.btn.disabled { opacity: 0.5; pointer-events: none; box-shadow: none; }
 
 /* ===== セクション共通 ===== */
-.section { padding: 88px 0; }
-.section-tint { background: var(--color-paper-tint); }
+.section { padding: 92px 0; }
+.section-dark { background: var(--black); }
+.section-dark .lead-text { color: #cabfb4; }
 
 .section-eyebrow {
-  font-size: 0.78rem;
-  letter-spacing: 0.28em;
-  color: var(--color-sun);
-  font-weight: 700;
-  margin: 0 0 8px;
+  font-family: var(--font-pop);
+  font-size: 0.95rem;
+  letter-spacing: 0.18em;
+  margin: 0 0 10px;
 }
+.eb-sky { color: var(--sky); }
+.eb-pink { color: var(--pink); }
+.eb-orange { color: var(--orange); }
 
 .section-title {
-  font-family: var(--font-serif);
-  font-weight: 700;
-  font-size: clamp(1.7rem, 5vw, 2.4rem);
+  font-family: var(--font-brush);
+  font-size: clamp(1.8rem, 5vw, 2.5rem);
   margin: 0 0 28px;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.06em;
 }
+.section-title.light { color: var(--white); }
 
-.lead-text { font-size: 1.02rem; color: var(--color-ink-soft); margin: 0 0 18px; }
+.lead-text { font-size: 1.04rem; color: var(--ink-soft); margin: 0 0 18px; }
+.lead-text.light-text { color: #cabfb4; }
 
 /* ===== 活動カード ===== */
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 28px;
-  margin-top: 8px;
-}
-
-.card {
-  background: var(--color-white);
-  border-radius: var(--radius);
-  overflow: hidden;
-  box-shadow: var(--shadow);
-  transition: transform 0.2s;
-}
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 28px; margin-top: 8px; }
+.card { background: var(--white); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); transition: transform 0.2s; }
 .card:hover { transform: translateY(-4px); }
-
-.card-media { aspect-ratio: 4 / 3; background: var(--color-paper-tint); }
+.card-media { aspect-ratio: 4 / 3; background: var(--black-soft); }
 .media-placeholder {
   width: 100%; height: 100%;
   display: flex; align-items: center; justify-content: center;
-  color: #b6a892; font-size: 0.9rem; letter-spacing: 0.1em;
-  background: repeating-linear-gradient(45deg, #f4ecdf, #f4ecdf 12px, #efe5d4 12px, #efe5d4 24px);
+  color: #8a7f74; font-size: 0.9rem; letter-spacing: 0.1em;
+  background: repeating-linear-gradient(45deg, #211c19, #211c19 12px, #2a2420 12px, #2a2420 24px);
 }
-
 .card-body { padding: 22px 24px 26px; }
 .card-tag {
-  display: inline-block;
-  font-size: 0.75rem;
-  font-weight: 700;
-  color: var(--color-sun-dark);
-  background: #fce6db;
-  padding: 3px 12px;
-  border-radius: 999px;
-  margin: 0 0 12px;
+  display: inline-block; font-size: 0.75rem; font-weight: 700;
+  color: var(--white); padding: 3px 13px; border-radius: 999px; margin: 0 0 12px;
 }
-.card-title { font-family: var(--font-serif); font-size: 1.25rem; margin: 0 0 10px; }
-.card-text { font-size: 0.95rem; color: var(--color-ink-soft); margin: 0; }
+.tag-sky { background: var(--sky); }
+.tag-orange { background: var(--orange); }
+.tag-yellow { background: var(--yellow); color: #5a4a00; }
+.card-title { font-family: var(--font-brush); font-size: 1.3rem; margin: 0 0 10px; }
+.card-text { font-size: 0.95rem; color: var(--ink-soft); margin: 0; }
 
 /* ===== ステップ（これから） ===== */
 .step-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 26px; }
 .step-list li { display: flex; gap: 20px; align-items: flex-start; }
 .step-num {
-  flex: none;
-  width: 48px; height: 48px;
+  flex: none; width: 50px; height: 50px;
   display: flex; align-items: center; justify-content: center;
-  font-family: var(--font-serif);
-  font-weight: 800;
-  font-size: 1.3rem;
-  color: var(--color-white);
-  background: var(--color-sun);
-  border-radius: 50%;
+  font-family: var(--font-pop); font-size: 1.4rem;
+  color: var(--white); background: var(--pink); border-radius: 50%;
 }
-.step-title { font-family: var(--font-serif); font-size: 1.2rem; margin: 6px 0 6px; }
-.step-list p { margin: 0; color: var(--color-ink-soft); font-size: 0.96rem; }
+.step-list li:nth-child(2) .step-num { background: var(--orange); }
+.step-title { font-family: var(--font-brush); font-size: 1.25rem; margin: 8px 0 6px; }
+.step-list p { margin: 0; color: var(--ink-soft); font-size: 0.96rem; }
 
 /* ===== CTA ===== */
-.section-cta { background: var(--color-paper-tint); }
-.contact-placeholder {
-  display: inline-block;
-  margin-top: 8px;
-  padding: 12px 22px;
-  border: 1px dashed var(--color-line);
-  border-radius: var(--radius);
-  color: var(--color-ink-soft);
-  font-size: 0.92rem;
-  background: var(--color-white);
-}
+.section-cta { background: var(--black); }
+.contact-buttons { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; margin-top: 24px; }
 
 /* ===== フッター ===== */
-.site-footer { background: var(--color-ink); color: #d8cfc6; padding: 40px 0; }
+.site-footer { background: #0c0a08; color: #b8afa4; padding: 44px 0; }
 .footer-inner { display: flex; flex-direction: column; gap: 6px; align-items: center; text-align: center; }
-.footer-logo { font-family: var(--font-serif); font-weight: 700; font-size: 1.3rem; color: var(--color-white); margin: 0; letter-spacing: 0.1em; }
-.footer-logo span { font-size: 0.72rem; color: #a99e93; margin-left: 8px; letter-spacing: 0.15em; }
-.footer-place { font-size: 0.85rem; margin: 0; }
-.footer-copy { font-size: 0.78rem; color: #8c8178; margin: 8px 0 0; }
+.footer-logo { font-family: var(--font-brush); font-size: 1.5rem; color: var(--white); margin: 0; letter-spacing: 0.12em; }
+.footer-place { font-size: 0.85rem; color: #9a9089; margin: 0; }
+.footer-copy { font-size: 0.78rem; color: #7d736a; margin: 8px 0 0; }
 
 /* ===== レスポンシブ ===== */
 @media (max-width: 640px) {
   .nav { gap: 16px; }
   .nav a { font-size: 0.82rem; }
-  .logo-sub { display: none; }
-  .section { padding: 64px 0; }
-  .header-inner { height: 60px; }
+  .section { padding: 66px 0; }
+  .header-inner { height: 58px; }
 }

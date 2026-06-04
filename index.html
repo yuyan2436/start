@@ -4,9 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>晴れ人（はれびと）｜茨城県日立市のイベントグループ</title>
-  <meta name="description" content="晴れ人（はれびと）は茨城県日立市を拠点に、地域のお祭りや行事を楽しむイベントグループです。宵祭りの出店、助川御神幸祭のみこし担ぎなど、楽しそう・おもろそうと感じた人が善意で動いています。" />
+  <meta name="description" content="晴れ人（はれびと）は茨城県日立市を拠点に、地域のお祭りや行事を楽しむイベントグループです。助川鹿嶋神社の宵祭りでの出店、助川御神幸祭のみこし担ぎなど、楽しそう・おもろそうと感じた人が善意で動いています。" />
 
-  <!-- OGP（SNSでシェアされたときの見た目。画像は素材が揃ったら設定します） -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="晴れ人（はれびと）" />
   <meta property="og:description" content="茨城県日立市の地域イベントを楽しむグループ。楽しそう・おもろそう、そう感じた人が動いています。" />
@@ -14,7 +13,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@600;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Yuji+Syuku&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=Reggae+One&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
@@ -22,25 +21,26 @@
   <!-- ===== ヘッダー ===== -->
   <header class="site-header">
     <div class="container header-inner">
-      <a class="logo" href="#top">
-        <span class="logo-main">晴れ人</span>
-        <span class="logo-sub">はれびと</span>
-      </a>
+      <a class="logo" href="#top">晴れ人</a>
       <nav class="nav" aria-label="メインメニュー">
         <a href="#about">晴れ人とは</a>
-        <a href="#works">活動実績</a>
+        <a href="#works">活動</a>
         <a href="#future">これから</a>
         <a href="#contact">声をかける</a>
       </nav>
     </div>
   </header>
 
-  <!-- ===== ヒーロー ===== -->
+  <!-- ===== ヒーロー（Tシャツそのまま：黒地に白の筆文字） ===== -->
   <section class="hero" id="top">
-    <div class="hero-overlay"></div>
+    <div class="hero-rays" aria-hidden="true"></div>
     <div class="container hero-inner">
       <p class="hero-place">茨城県日立市</p>
       <h1 class="hero-title">晴れ人</h1>
+      <!-- 看板の手描き波線をイメージした下線 -->
+      <svg class="hero-wave" viewBox="0 0 240 18" aria-hidden="true" preserveAspectRatio="none">
+        <path d="M2 9 Q 22 1, 42 9 T 82 9 T 122 9 T 162 9 T 202 9 T 238 9" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round"/>
+      </svg>
       <p class="hero-lead">楽しそう、おもろそう。<br />そう感じた人が、動く。</p>
       <div class="hero-actions">
         <a class="btn btn-primary" href="#works">活動を見る</a>
@@ -53,12 +53,16 @@
     <!-- ===== 晴れ人とは ===== -->
     <section class="section" id="about">
       <div class="container narrow">
-        <p class="section-eyebrow">ABOUT</p>
+        <p class="section-eyebrow eb-sky">ABOUT</p>
         <h2 class="section-title">晴れ人とは</h2>
         <p class="lead-text">
           晴れ人（はれびと）は、茨城県日立市を拠点にした地域のイベントグループです。
           決まった活動方針はありません。お祭りや行事を見て「楽しそう」「おもろそう」、
           そう感じた人間が善意で集まり、街を盛り上げています。
+        </p>
+        <p class="lead-text">
+          目印は、背中に白い筆文字で「晴れ人」と入った黒いTシャツ。
+          手描きの看板も、みこしも、出店も、できることを自分たちの手でつくります。
         </p>
         <p class="lead-text">
           まずは地元の行事に飛び込むところから。いつかは、いろいろな行事から
@@ -67,23 +71,24 @@
       </div>
     </section>
 
-    <!-- ===== 活動実績 ===== -->
-    <section class="section section-tint" id="works">
+    <!-- ===== 活動 ===== -->
+    <section class="section section-dark" id="works">
       <div class="container">
-        <p class="section-eyebrow">WORKS</p>
-        <h2 class="section-title">これまでの活動</h2>
+        <p class="section-eyebrow eb-pink">WORKS</p>
+        <h2 class="section-title light">これまでの活動</h2>
 
         <div class="cards">
           <article class="card">
             <div class="card-media">
-              <!-- 写真が用意できたら src を差し替えます -->
               <div class="media-placeholder">写真準備中</div>
             </div>
             <div class="card-body">
-              <p class="card-tag">出店</p>
+              <p class="card-tag tag-sky">出店</p>
               <h3 class="card-title">助川鹿嶋神社「宵祭り」</h3>
               <p class="card-text">
-                茨城県日立市・助川鹿嶋神社で開かれる縁起の良いお祭り「宵祭り」に出店しました。
+                縁起の良いお祭り「宵祭り」に晴れ人として出店。手描きの看板で
+                「ぜーったいフルーツ飴」（りんご飴・シャインマスカット飴）やすいとんを販売し、
+                会場を盛り上げました。
               </p>
             </div>
           </article>
@@ -93,10 +98,25 @@
               <div class="media-placeholder">写真準備中</div>
             </div>
             <div class="card-body">
-              <p class="card-tag">みこし</p>
+              <p class="card-tag tag-orange">みこし</p>
               <h3 class="card-title">助川御神幸祭</h3>
               <p class="card-text">
                 7年に一度の「助川御神幸祭」で、みこしを担ぎ街を練り歩きました。
+                大勢の人で賑わう夜のお祭りを、地域のみなさんと一緒につくりました。
+              </p>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-media">
+              <div class="media-placeholder">写真準備中</div>
+            </div>
+            <div class="card-body">
+              <p class="card-tag tag-yellow">準備</p>
+              <h3 class="card-title">みんなで作る地域の行事</h3>
+              <p class="card-text">
+                世代を超えて手を動かし、舞台やお祭りの準備から関わります。
+                顔の見える関係づくりも、晴れ人の大切な活動です。
               </p>
             </div>
           </article>
@@ -107,7 +127,7 @@
     <!-- ===== これから ===== -->
     <section class="section" id="future">
       <div class="container narrow">
-        <p class="section-eyebrow">FUTURE</p>
+        <p class="section-eyebrow eb-orange">FUTURE</p>
         <h2 class="section-title">これから目指すこと</h2>
         <ol class="step-list">
           <li>
@@ -131,14 +151,18 @@
     <!-- ===== 声をかける（お問い合わせ） ===== -->
     <section class="section section-cta" id="contact">
       <div class="container narrow center">
-        <p class="section-eyebrow">CONTACT</p>
-        <h2 class="section-title">晴れ人に声をかける</h2>
-        <p class="lead-text">
+        <p class="section-eyebrow eb-sky">CONTACT</p>
+        <h2 class="section-title light">晴れ人に声をかける</h2>
+        <p class="lead-text light-text">
           出店・お祭り・行事への参加のご相談、「一緒にやってみたい」という方も大歓迎です。
-          下記の連絡先からお気軽にどうぞ。
+          下記からお気軽にどうぞ。
         </p>
-        <!-- 連絡先が決まったら、メールやSNSのリンクをここに入れます -->
-        <p class="contact-placeholder">連絡先（メール／SNS）は準備中です</p>
+        <div class="contact-buttons">
+          <!-- メールアドレスが決まったら href="mailto:..." を設定します -->
+          <a class="btn btn-primary disabled" aria-disabled="true">メール（準備中）</a>
+          <!-- InstagramのURLが決まったら href を設定します -->
+          <a class="btn btn-ghost disabled" aria-disabled="true">Instagram（準備中）</a>
+        </div>
       </div>
     </section>
   </main>
@@ -146,14 +170,13 @@
   <!-- ===== フッター ===== -->
   <footer class="site-footer">
     <div class="container footer-inner">
-      <p class="footer-logo">晴れ人 <span>はれびと</span></p>
+      <p class="footer-logo">晴れ人</p>
       <p class="footer-place">茨城県日立市</p>
       <p class="footer-copy">&copy; <span id="year"></span> 晴れ人</p>
     </div>
   </footer>
 
   <script>
-    // フッターの年を自動更新
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
